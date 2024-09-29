@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tự Học Code - Hành Trình Thành Coder</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <link
+      rel="icon"
+      href="images/icon-web.jpg"/>
+
+    <link rel="stylesheet" href="assets/css/index.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/> 
+
+    <style>
+      .anclick{visibility: hidden;position: absolute;width: 300px;border-radius: 10px;background: #fff;box-shadow: 0 12px 35px rgba(0,0,0,0.1);}.anclick .anclick3{padding: 10px 12px;}.anclick2 .anclick4{list-style: none;font-size: 22px;height: 50px;display: flex;width: 100%;cursor: pointer;align-items: center;border-radius: 5px;margin-bottom: 2px;padding: 0 5px 0 10px;}.anclick2 .anclick4:hover{background: #f2f2f2;}.anclick2 .anclick4 span{margin-left: 8px;font-size: 19px;}.anclick2 .setting{display: flex;margin-top: -5px;padding: 5px 12px;border-top: 1px solid #ccc;}.anclick2{position: relative;justify-content: space-between;}
+    </style>
+
+  </head>
+  <body>
+    <div class="anclick"><div class="anclick2"><ul class="anclick3"><li class="anclick4"><i class="uil uil-eye"></i><span>Preview</span></li><li class="anclick4"><i class="uil uil-link-alt"></i><span>Get Link</span></li><li class="anclick4"><i class="uil uil-edit"></i><span>Rename</span></li><li class="anclick4"><i class="uil uil-trash-alt"></i><span>Delete</span></li></ul><div class="setting"><li class="anclick4"><i class="uil uil-setting"></i><span>Settings</span></li></div></div></div>
+
+    <script>
+const contextMenu = document.querySelector(".anclick"),shareMenu = contextMenu.querySelector(".share-anclick3");window.addEventListener("contextmenu", e => {e.preventDefault();let x = e.offsetX, y = e.offsetY,winWidth = window.innerWidth,winHeight = window.innerHeight,cmWidth = contextMenu.offsetWidth,cmHeight = contextMenu.offsetHeight;if(x > (winWidth - cmWidth - shareMenu.offsetWidth)) {shareMenu.style.left = "-200px";} else {shareMenu.style.left = "";shareMenu.style.right = "-200px";}x = x > winWidth - cmWidth ? winWidth - cmWidth - 5 : x;y = y > winHeight - cmHeight ? winHeight - cmHeight - 5 : y;contextMenu.style.left = `${x}px`;contextMenu.style.top = `${y}px`;contextMenu.style.visibility = "visible";});document.addEventListener("click", () => contextMenu.style.visibility = "hidden");
+    </script>
+
+    <header class="header">
+      <div id="menu-btn" class="fas fa-bars"></div>
+
+      <a data-aos="zoom-in-left" data-aos-delay="150" href="mailto:vothanhngu00@gmail.com" class="logo">
+        <i class="fas fa-paper-plane"></i>Ngv
+      </a>
+
+      <nav class="navbar">
+        <a data-aos="zoom-in-left" data-aos-delay="300" href="#home">home</a>
+        <a data-aos="zoom-in-left" data-aos-delay="450" href="#about">about</a>
+        <a data-aos="zoom-in-left" data-aos-delay="600" href="#aboutweb">About Web</a>
+        <a data-aos="zoom-in-left" data-aos-delay="750" href="#achievements">Achievements</a>
+        <a data-aos="zoom-in-left" data-aos-delay="1150" href="#blogs">blogs</a>
+      </nav>
+
+      <a
+        data-aos="zoom-in-left"
+        data-aos-delay="1300"
+        class="btn"
+        id="icon"
+        >Click here to listen</a
+      >
+    </header>
+
+    <section class="home" id="home">
+      <div class="content">
+        <span data-aos="fade-up" data-aos-delay="150">Web được code 3 năm trước</span>
+        <h3 data-aos="fade-up" data-aos-delay="300">Web chưa được code lại nên còn nhiều thiếu xót!!</h3>
+        <p data-aos="fade-up" data-aos-delay="450">
+          Ấn vào "Nghe Nhạc" dưới đây để nghe nhạc :D
+        </p>
+        <a data-aos="fade-up" data-aos-delay="600" class="btn" id="icon2"
+          >Nghe Nhạc</a
+        >
+      </div>
+    </section>
+
+    <section class="book-form" id="book-form">
+      <form action="">
+        <div data-aos="zoom-in" data-aos-delay="150" class="inputBox">
+          <span>Bạn Muốn Tới Đâu Để Đập Máy?</span>
+          <input
+            type="text"
+            placeholder="Nhập vào chúng tôi sẽ dẫn bạn tới đó"
+            value=""
+          />
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="300" class="inputBox">
+          <span>Bạn Muốn Đi Vào Lúc Nào?</span>
+          <input type="date" value="" />
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="450" class="inputBox">
+          <span>Bao Nhiêu Người</span>
+          <input type="number" placeholder="Số người" value="" />
+        </div>
+        <input
+          data-aos="zoom-in"
+          data-aos-delay="600"
+          type="submit"
+          value="Tìm Ngay"
+          class="btn"
+        />
+      </form>
+    </section>
+
+    <section class="about" id="about">
+      <div class="box" data-aos="fade-up" data-aos-delay="450">
+        <div class="image">
+          <img src="images/aboutus.png" alt="" width="300" height="300" />
+        </div>
+
+        <div class="content" data-aos="fade-left" data-aos-delay="400">
+          <span>About Us</span>
+          <p>
+            Về Chúng tôi thì, chúng tôi sẽ thiết kế website đẹp hơn, chất lượng
+            hơn . Nếu các bạn có ý kiến làm đẹp cho web thì các bạn hãy liên hệ
+            với chúng tôi dưới đây nhé
+          </p>
+        </div>
+        <div class="buttons">
+          <a
+            href="https://discord.com/invite/UNxvX8nqep "
+            class="button-discord"
+          >
+            <span class="button-i">
+              <i class="fab fa-discord"></i>
+            </span>
+            <span class="button-t"> Discord </span>
+          </a>
+          <a
+            href="https://discord.com/api/oauth2/authorize?client_id=898141781399601202&permissions=8&scope=bot"
+            class="button-botdiscord"
+          >
+            <span class="button-i">
+              <i class="fas fa-angle-right"></i>
+            </span>
+            <span class="button-t"> Add Bot </span>
+            <span class="button-i">
+              <i class="fas fa-angle-left"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="aboutweb" id="aboutweb">
+      <div class="heading">
+        <span>About Web</span>
+        <h1>Tất cả những gì thay đổi của web</h1>
+      </div>
+
+      <div class="box-container">
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+          <div class="image">
+            <img src="images/web1.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>Web Đầu Tiên khi học code</h3>
+            <p>Đây là web đầu tiên mà tôi làm web, nó rất xấu và đơn sơ...</p>
+            <a href="#">Comming Soon <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+          <div class="image">
+            <img src="images/web2.png" alt="" />
+          </div>
+          <div class="content">
+            <h3>Web sau khi học code được 2 tuần</h3>
+            <p>Tôi đã biết cách trang trí web cho đẹp hơn...</p>
+            <a href="#">Comming Soon <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="600">
+          <div class="image">
+            <img
+              src="images/web3.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <h3>Web sau khi 2 tháng học code</h3>
+            <p>
+              Tôi trở thành coder...
+            </p>
+            <a href="#">Comming Soon <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="750">
+          <div class="image">
+            <img
+              src="images/web-truong.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <h3>Web trường educa</h3>
+            <p>Website Educa - Website trường học...</p>
+            <a href="educa">Read More <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="900">
+          <div class="image">
+            <img
+              src="images/snakegame.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <h3>Snake Game</h3>
+            <p>Snake game cực đẹp và cực cuốn..</p>
+            <a href="snakegame"
+              >Play Game <i class="fas fa-angle-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="1150">
+          <div class="image">
+            <img
+              src="images/caro-game.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <h3>Game Caro</h3>
+            <p>Game Caro được code bởi Võ Thành Ngữ, Bạn có thể solo caro với bot của chúng tôi</p>
+            <a href="carogame">Play Game <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="1300">
+          <div class="image">
+            <img
+              src="images/game-go-nhanh.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <h3>Game đánh chữ nhanh</h3>
+            <p>Rèn luyện trình độ cào phím...</p>
+            <a href="game-go-nhanh">Play now... <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="1600">
+          <div class="image">
+            <img
+              src="images/tomau.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <h3>Website vẽ màu nước cực đẹp</h3>
+            <p>Võ Thành Ngữ đã code web vẽ màu nước dành cho dân thích vẽ...</p>
+            <a href="tomau">Draw Now <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="1900">
+          <div class="image">
+            <img
+              src="images/commingsoon.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <h3>Comming soon</h3>
+            <p>Comming soon...</p>
+            <a href="#">Comming Soon... <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="2300">
+          <div class="image">
+            <img
+              src="images/commingsoon.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <h3>Comming soon</h3>
+            <p>Comming soon...</p>
+            <a href="#">Comming Soon... <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="2600">
+          <div class="image">
+            <img
+              src="images/commingsoon.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <h3>Comming soon</h3>
+            <p>Comming soon...</p>
+            <a href="#">Comming Soon... <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="2900">
+          <div class="image">
+            <img
+              src="images/commingsoon.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <h3>Comming soon</h3>
+            <p>Comming soon...</p>
+            <a href="#">Comming Soon... <i class="fas fa-angle-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="achievements" id="achievements">
+      <div class="heading">
+        <span>achievements</span>
+        <h1>Thành Tựu, Các Kĩ Năng,...</h1>
+      </div>
+
+      <div class="box-container">
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+          <i class="fas fa-globe"></i>
+          <h3>worldwide</h3>
+          <p>Website trên toàn thế giới.</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+          <i class="fas fa-hiking"></i>
+          <h3>try</h3>
+          <p>Chúng tôi có đội ngũ rất chăm chỉ và cố gắng.</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+          <i class="fas fa-code"></i>
+          <h3>Dev</h3>
+          <p>Team đầy đặn kinh nghiệm về code.</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="600">
+          <i class="fas fa-keyboard"></i>
+          <h3>Code</h3>
+          <p>Chúng tôi có thể cào phím tay nhanh hơn não.</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="750">
+          <i class="fas fa-lightbulb"></i>
+          <h3>idea</h3>
+          <p>Siêu ý tưởng, có thể làm bất cứ thứ gì mà team muốn.</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="900">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Achievement</h3>
+          <p>Tạo ra web trường, game,...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="review">
+      <div class="content" data-aos="fade-right" data-aos-delay="300">
+        <span>Our Team</span>
+        <h3>Development Team</h3>
+        <p>
+          Có hai người trong một team làm web này. Một người code , một người
+          cho ý tưởng
+        </p>
+      </div>
+
+      <div class="box-container" data-aos="fade-left" data-aos-delay="600">
+        <div class="box">
+          <p>" Làm gì không được thì đập máy. "</p>
+          <div class="user">
+            <img src="images/anhadmin.jpg" alt="" />
+            <div class="info">
+              <h3>Ngv</h3>
+              <span>-Founder <br />-Administrator</span>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <p>
+            " Bạn đừng cố gắng làm 1 điều gì đó, hãy đập máy để thực hiện ước mơ
+            đó. "
+          </p>
+          <div class="user">
+            <img src="images/anhcofounder.jpg" alt="" />
+            <div class="info">
+              <h3>Đạt ML</h3>
+              <span>-Co Founder <br />-Idea Supplier</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blogs" id="blogs">
+      <div class="heading">
+        <span>blogs & posts</span>
+        <h1>Comming Soon...</h1>
+      </div>
+
+      <div class="box-container">
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+          <div class="image">
+            <img
+              src="images/commingsoon.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <a href="#" class="link">Comming Soon...</a>
+            <p>Comming Soon...</p>
+            <div class="icon">
+              <a href="#"><i class="fas fa-clock"></i> 21st may, 2023</a>
+              <a href="#"><i class="fas fa-user"></i> by admin</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+          <div class="image">
+            <img
+              src="images/commingsoon.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <a href="#" class="link">Comming Soon...</a>
+            <p>Comming Soon...</p>
+            <div class="icon">
+              <a href="#"><i class="fas fa-clock"></i> 21st may, 2023</a>
+              <a href="#"><i class="fas fa-user"></i> by admin</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="450">
+          <div class="image">
+            <img
+              src="images/commingsoon.png"
+              alt=""
+            />
+          </div>
+          <div class="content">
+            <a href="#" class="link">Comming Soon...</a>
+            <p>Comming Soon...</p>
+            <div class="icon">
+              <a href="#"><i class="fas fa-clock"></i> 21st may, 2023</a>
+              <a href="#"><i class="fas fa-user"></i> by admin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="banner">
+      <div class="content" data-aos="zoom-in-up" data-aos-delay="300">
+        <span>Cảm Ơn Bạn Đã Xem Tới Đây</span>
+        <h3>Welcom to Ngv</h3>
+        <p>
+          Cảm ơn bạn đã đọc những blog cá nhân Website. Chúc bạn một ngày tốt
+          lành
+        </p>
+        <a
+          href="images/rickroll.jpg"
+          class="btn"
+          >Click Here To Đập Máy</a
+        >
+      </div>
+    </div>
+
+    <section class="footer">
+      <div class="box-container">
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+          <a href="#" class="logo"> <i class="fas fa-paper-plane"></i>Ngv </a>
+          <p>Các Bạn Có thể liên hệ với chúng tôi tại đây</p>
+          <div class="share">
+            <a
+              href="https://www.facebook.com/v.ung.hnaht"
+              class="fab fa-facebook-f"
+            ></a>
+            <a
+              href="https://discord.com/invite/6fAaq67wej"
+              class="fab fa-discord"
+            ></a>
+            <a
+              href="https://www.instagram.com/v.ung_hnaht/"
+              class="fab fa-instagram"
+            ></a>
+
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+          <h3>quick links</h3>
+          <a href="#home" class="links">
+            <i class="fas fa-arrow-right"></i> home
+          </a>
+          <a href="#about" class="links">
+            <i class="fas fa-arrow-right"></i> about
+          </a>
+          <a href="#aboutweb" class="links">
+            <i class="fas fa-arrow-right"></i> about web
+          </a>
+          <a href="#achievements" class="links">
+            <i class="fas fa-arrow-right"></i> Achievements
+          </a>
+          <a href="#blogs" class="links">
+            <i class="fas fa-arrow-right"></i> blogs
+          </a>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="450">
+          <h3>contact info</h3>
+          <p><i class="fas fa-map"></i> Thủ Thừa, Long An, Việt Nam</p>
+          <p><i class="fas fa-phone"></i> Có cc cho nhé</p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            <a
+              href="/cdn-cgi/l/email-protection"
+              class="__cf_email__"
+              data-cfemail="6c1a0318040d0204020b195c5c2c0b010d0500420f0301"
+              >[email&#160;protected]</a
+            >
+          </p>
+          <p><i class="fas fa-clock"></i> 7:00am - 10:00pm</p>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="600">
+          <h3>newsletter</h3>
+          <p>subscribe for latest updates</p>
+          <form action="">
+            <input
+              type="email"
+              name=""
+              placeholder="Cái này để cho đẹp thôi"
+              class="email"
+              id=""
+            />
+            <input type="submit" value="subscribe" class="btn" />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="credit">
+      created by <br /><span>Võ Thành Ngữ</span> <br />
+    </div>
+
+    <script src="assets/js/index.js"></script>
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        offset: 150,
+      });
+    </script>
+<audio id="mysong">
+  <source src="nhac/super-idol-tet.mp3" type="audio/mp3">
+</audio>
+<script>
+  var mysong = document.getElementById("mysong");
+  var icon = document.getElementById("icon");
+  icon.onclick = function(){
+      if(mysong.paused){
+          mysong.play();
+      }else{
+          mysong.pause();
+      }
+  }
+</script>
+<audio id="song2">
+  <source src="nhac/nhac-gang.mp3" type="audio/mp3">
+</audio>
+<script>
+  var song2 = document.getElementById("song2");
+  var icon2 = document.getElementById("icon2");
+  icon2.onclick = function(){
+      if(song2.paused){
+          song2.play();
+      }else{
+          song2.pause();
+      }
+  }
+</script>
+  </body>
+</html>
