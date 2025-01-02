@@ -18,65 +18,6 @@
 
 <body>
 
-  <div class="anclick">
-    <div class="anclick2">
-      <ul class="anclick3">
-        <li class="anclick4">
-          <i class="uil uil-eye"></i>
-          <span>Preview</span>
-        </li>
-        <li class="anclick4">
-          <i class="uil uil-link-alt"></i>
-          <span>Get Link</span>
-        </li>
-        <li class="anclick4">
-          <i class="uil uil-edit"></i>
-          <span>Rename</span>
-        </li>
-        <li class="anclick4">
-          <i class="uil uil-trash-alt"></i>
-          <span>Delete</span>
-        </li>
-      </ul>
-      <div class="setting">
-        <li class="anclick4">
-          <i class="uil uil-setting"></i>
-          <span>Settings</span>
-        </li>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const contextMenu = document.querySelector(".anclick"),
-    shareMenu = contextMenu.querySelector(".share-anclick3");
-
-    window.addEventListener("contextmenu", e => {
-        e.preventDefault();
-        let x = e.offsetX, y = e.offsetY,
-        winWidth = window.innerWidth,
-        winHeight = window.innerHeight,
-        cmWidth = contextMenu.offsetWidth,
-        cmHeight = contextMenu.offsetHeight;
-
-        if(x > (winWidth - cmWidth - shareMenu.offsetWidth)) {
-            shareMenu.style.left = "-200px";
-        } else {
-            shareMenu.style.left = "";
-            shareMenu.style.right = "-200px";
-        }
-
-        x = x > winWidth - cmWidth ? winWidth - cmWidth - 5 : x;
-        y = y > winHeight - cmHeight ? winHeight - cmHeight - 5 : y;
-        
-        contextMenu.style.left = `${x}px`;
-        contextMenu.style.top = `${y}px`;
-        contextMenu.style.visibility = "visible";
-    });
-
-    document.addEventListener("click", () => contextMenu.style.visibility = "hidden");
-  </script>
-
   <div class="navbar">
     <a class="active" href="https://suplo.io.vn"><i class="fa fa-fw fa-home"></i> Home</a> 
     <a href="snakegame">Game Con Rắn</a>
